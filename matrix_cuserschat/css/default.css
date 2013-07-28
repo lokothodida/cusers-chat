@@ -1,0 +1,91 @@
+  .chatbox {
+    background:#fff;
+    border-bottom: 1px solid #c8c8c8;
+    border-left: 1px solid #e4e4e4;
+    border-right: 1px solid #c8c8c8;
+    -moz-box-shadow: 2px 1px 10px rgba(0,0,0, .07);
+    -webkit-box-shadow: 2px 1px 10px rgba(0,0,0, .07);
+    box-shadow: 2px 1px 10px rgba(0,0,0, .07);
+    margin: 5px 0 10px 0;
+  }
+  .chatbox .title {
+    font-size: 130%;
+    background: #6B94B4;
+    background: -moz-linear-gradient(top, #6B94B4 0%, #316594 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#6B94B4), color-stop(100%,#316594)); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6B94B4', endColorstr='#316594',GradientType=0 );
+    padding: 5px;
+    border-bottom: 1px solid #2B5780;
+    color: #fff;
+    font-weight: 100;
+    text-shadow: none;
+  }
+  .chatbox .shouts {
+    height: 200px;
+    overflow-y: scroll;
+    border: 1px solid #e4e4e4;
+    margin: 0 5px 0 5px;
+  }
+  .chatbox .links {
+    background: #F1F1F1;
+    border: 1px solid #e4e4e4;
+    padding: 3px;
+  }
+  .chatbox .links.top { border-bottom: none; margin: 5px 5px 0 5px; }
+  .chatbox .links.bottom { border-top: none; margin: 0 5px 5px 5px; }
+  .chatbox .links a, .chatbox .links span { padding: 4px; } 
+  .chatbox .shout { padding: 5px; }
+  .chatbox .shout:nth-child(odd) { background: #FBFBFB; }
+  .chatbox .shout:nth-child(even) { background: #F1F1F1; }
+  .chatbox .shout .avatar { float: left; margin: 0 5px 5px 0; }
+  .chatbox .date {
+    display: block;
+    clear: both;
+    margin: 3px 0 0 0;
+    padding: 3px 0 0 0;
+    border-top: 1px dotted #e4e4e4;
+    text-align: right;
+    font-size: 80%;
+    color: #c8c8c8;
+  }
+  .chatbox .options {
+    display: block;
+    overflow: hidden;
+  }
+  .chatbox form *:focus { outline: none; }
+  .chatbox form *:required {
+    box-shadow: none;
+  }
+  .chatbox form { padding: 0 5px 5px 5px; }
+  .chatbox form textarea.content {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    padding: 3px;
+    border: 1px solid #e4e4e4;
+  }
+  .chatbox form input[type="email"], .chatbox form input[type="text"] {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    padding: 3px;
+    margin: 0 0 5px 0;
+    border: 1px solid #e4e4e4;
+  }
+  .chatbox form input[type="email"]:focus, .chatbox form input[type="text"]:focus, .chatbox form textarea.content:focus {
+    border: 1px solid #c8c8c8;
+  }
+  .chatbox form .bbcode { margin: 0 0 5px 0; }
+  .chatbox form .refresh {
+    display: block;
+    float: right;
+    padding: 3px 0 3px 0;
+  }
+  .chatbox .refresh {
+    background: url(<?php get_site_url(); ?>plugins/matrix/img/refresh_small.png) center left no-repeat;
+    padding: 0 0 0 20px;
+  }
