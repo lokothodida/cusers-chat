@@ -27,7 +27,8 @@
 
 # activate actions/filters
   # front-end
-    add_action('error-404', array($mcuserschat, 'display')); // display for plugin
+    add_action('error-404', array($mcuserschat, 'display'));
+    add_filter('content',   array($mcuserschat, 'content'));
   # back-end
     add_action($mcuserschat->pluginInfo('page').'-sidebar', 'createSideMenu' , array($mcuserschat->pluginInfo('id'), $mcuserschat->pluginInfo('sidebar'))); // sidebar link
  

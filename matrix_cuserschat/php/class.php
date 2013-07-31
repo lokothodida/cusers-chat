@@ -247,6 +247,22 @@ class MatrixCUsersChat {
       ob_end_clean();
     }    
   }
+  
+  # content (placeholders)
+  public function content() {
+    global $content;
+    
+    $placeholders = $replacements = array();
+    
+    $placeholders[] = '(% cusers_chat %)';
+    
+    ob_start();
+    $this->chatbox(true);
+    $replacements[] = ob_get_contents();
+    ob_end_clean();
+    
+    return str_replace($placeholders, $replacements, $content);
+  }
 
   # admin panel
   public function admin() {
