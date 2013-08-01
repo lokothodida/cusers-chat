@@ -233,12 +233,12 @@ class MatrixCUsersChat {
   # display page
   public function display() {
     global $id, $data_index;
-
     if ($id == $this->config['slug']) {
       // meta
       $data_index->title         = $this->config['title'];
       $data_index->url           = $this->config['slug'];
       $data_index->template      = $this->config['template'];
+      $data_index->content       = $this->core->getConfig('header-css');
       
       // content
       ob_start();
@@ -249,9 +249,7 @@ class MatrixCUsersChat {
   }
   
   # content (placeholders)
-  public function content() {
-    global $content;
-    
+  public function content($content) {
     $placeholders = $replacements = array();
     
     $placeholders[] = '(% cusers_chat %)';
