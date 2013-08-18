@@ -81,8 +81,8 @@ class MatrixCUsersChat {
   # check dependencies
   private function checkDependencies() {
     if (
-      (class_exists('TheMatrix') && TheMatrix::VERSION >= '1.02') &&
-      (class_exists('MatrixCUsers') && MatrixCUsers::VERSION >= '1.01')
+      (class_exists('TheMatrix') && TheMatrix::VERSION >= '1.03') &&
+      (class_exists('MatrixCUsers') && MatrixCUsers::VERSION >= '1.02')
     ) return true;
     else return false;
   }
@@ -91,11 +91,11 @@ class MatrixCUsersChat {
   private function missingDependencies() {
     $dependencies = array();
     
-    if (!(class_exists('TheMatrix') && TheMatrix::VERSION >= '1.02')) {
-      $dependencies[] = array('name' => 'The Matrix (1.02+)', 'url' => 'https://github.com/n00dles/DM_matrix/');
+    if (!(class_exists('TheMatrix') && TheMatrix::VERSION >= '1.03')) {
+      $dependencies[] = array('name' => 'The Matrix (1.03+)', 'url' => 'https://github.com/n00dles/DM_matrix/');
     }
-    if (!(class_exists('MatrixCUsers') && MatrixCUsers::VERSION >= '1.01')) {
-      $dependencies[] = array('name' => 'Centralized Users (1.01+)', 'url' => 'http://get-simple.info/extend/plugin/centralised-users/657/');
+    if (!(class_exists('MatrixCUsers') && MatrixCUsers::VERSION >= '1.02')) {
+      $dependencies[] = array('name' => 'Centralized Users (1.02+)', 'url' => 'http://get-simple.info/extend/plugin/centralised-users/657/');
     }
     
     return $dependencies;
@@ -159,7 +159,7 @@ class MatrixCUsersChat {
         <a href="<?php echo $url; ?>"><?php echo $user['displayname']; ?></a>
       </span>
       <span class="content"><?php echo $this->parser->bbcode($shout['content'], $this->core->getSmilies()); ?></span>
-      <span class="date"><?php echo $this->core->date($shout['date']); ?></span>
+      <span class="date"><?php echo $shout['date']; ?></span>
     </div>
     <?php
   }

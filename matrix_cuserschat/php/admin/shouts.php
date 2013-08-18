@@ -23,7 +23,23 @@
   <div class="clear"></div>
 </div>
 
-<table class="highlight edittable">
+<script>
+  $(document).ready(function() {
+    var pajinateSettings = {
+      'items_per_page'  : 10,
+      'nav_label_first' : '|&lt;&lt;', 
+      'nav_label_prev'  : '&lt;', 
+      'nav_label_next'  : '&gt;', 
+      'nav_label_last'  : '&gt;&gt;|', 
+    };
+    
+    // pajination
+    $('.pajinate').pajinate(pajinateSettings);
+    $('.pajinate .page_navigation a').addClass('cancel');
+  });
+</script>
+
+<table class="highlight edittable pajinate">
   <thead>
     <tr>
       <th style="width: 20%;"><?php echo i18n_r(MatrixCUsers::FILE.'/USER'); ?></th>
@@ -32,7 +48,7 @@
       <th style="width: 5%;" style="text-align: right;"></th>
     </tr>
   </thead>
-  <tbody>
+  <tbody class="content">
     <?php foreach ($shouts as $shout) { ?>
       <tr>
         <td>
@@ -50,4 +66,11 @@
       </tr>
     <?php } ?>
   </tbody>
+  <thead>
+    <tr>
+      <th colspan="100%">
+        <div class="page_navigation"></div>
+      </th>
+    </tr>
+  </thead>
 </table>

@@ -10,7 +10,7 @@
     array(
       'name' => 'email',
       'label' => i18n_r(MatrixCUsers::FILE.'/EMAIL'),
-      'desc' => 'user@email.com',
+      'placeholder' => 'user@email.com',
       'type' => 'email',
       'required' => 'required',
     ),
@@ -45,7 +45,7 @@
   $tables[self::TABLE_CONFIG]['fields'] = array(
     array(
       'name' => 'title',
-      'desc' => i18n_r(MatrixCUsers::FILE.'/TITLE'),
+      'placeholder' => i18n_r(MatrixCUsers::FILE.'/TITLE'),
       'type' => 'textlong',
     ),
     array(
